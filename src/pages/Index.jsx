@@ -1,4 +1,4 @@
-import { Container, Text, VStack, Box } from "@chakra-ui/react";
+import { Container, Text, VStack, Box, Code } from "@chakra-ui/react";
 
 const Index = () => {
   const responseTimes = [
@@ -9,12 +9,13 @@ const Index = () => {
   ];
 
   return (
-    <Container centerContent maxW="container.md" height="100vh" display="flex" flexDirection="column" justifyContent="center" alignItems="center">
-      <VStack spacing={4}>
-        <Text fontSize="2xl" fontWeight="bold">Ping Response Times</Text>
+    <Container centerContent maxW="container.md" height="100vh" display="flex" flexDirection="column" justifyContent="center" alignItems="flex-start" bg="black" color="white" fontFamily="monospace">
+      <VStack spacing={4} align="flex-start">
+        <Text>base ~/git/mono-gpt-engineer/api/scripts git:(main)</Text>
+        <Text>./ping https://api.gptengineer.app</Text>
         {responseTimes.map((time, index) => (
-          <Box key={index} p={4} borderWidth={1} borderRadius="md" width="100%" textAlign="center">
-            <Text>Response time {time}</Text>
+          <Box key={index} p={0} width="100%">
+            <Text>Response time {time}.</Text>
           </Box>
         ))}
       </VStack>
